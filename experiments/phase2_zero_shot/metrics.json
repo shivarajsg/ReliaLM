@@ -1,0 +1,16 @@
+{
+  "json_validity": 79.33333333333333,
+  "schema_compliance": 66.0,
+  "tool_selection_accuracy": 52.666666666666664,
+  "parameter_accuracy_aggregated": 37.797619047619044,
+  "parameter_accuracy_per_param": {
+    "doc_path": 50.90909090909091,
+    "test_path": 28.78787878787879,
+    "query": 36.84210526315789,
+    "title": 36.11111111111111,
+    "body": 38.88888888888889,
+    "pr_number": 37.5
+  },
+  "end_to_end_executability": 52.33333333333333,
+  "total_examples": 300
+}
