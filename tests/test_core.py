@@ -161,3 +161,35 @@ def test_failure_report_generation():
     assert "malformed_json" in report
     assert "schema_violation" in report
     assert "2" in report  # Count for malformed_json
+
+
+def test_mock_executors():
+    from evaluation.mock_executors import get_mock_executor
+    exec_func = get_mock_executor()
+    
+    # Test search_repo
+    res, msg = exec_func({"tool": "search_repo", "parameters": {"query": "authentication"}})
+    assert res is True
+    
+    res, msg = exec_func({"tool": "search_repo", "parameters": {}})
+    assert res is False
+    assert "Missing required parameter" in msg
+    
+    # Test read_docs
+    res, msg = exec_func({"tool": "read_docs", "parameters": {"doc_path": "README.md"}})
+    assert res is True
+    
+    # Test create_issue
+    res, msg = exec_func({"tool": "create_issue", "parameters": {"title": "title", "body": "body"}})
+    assert res is True
+    
+    # Test run_tests
+    res, msg = exec_func({"tool": "run_tests", "parameters": {"test_path": "tests/test_core.py"}})
+    assert res is True
+    
+    # Test summarize_pr
+    res, msg = exec_func({"tool": "summarize_pr", "parameters": {"pr_number": 123}})
+    assert res is True
+    
+    res, msg = exec_func({"tool": "summarize_pr", "parameters": {"pr_number": "not_an_int"}})
+    assert res is False

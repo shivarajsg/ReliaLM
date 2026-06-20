@@ -1,0 +1,12 @@
+{
+  "json_validity": 97.0,
+  "schema_compliance": 92.33333333333333,
+  "field_accuracy": {
+    "issue_type": 83.33333333333334,
+    "root_cause": 81.66666666666667,
+    "priority": 80.66666666666666,
+    "affected_component": 82.66666666666667
+  },
+  "exact_match": 55.666666666666664,
+  "total_examples": 300
+}

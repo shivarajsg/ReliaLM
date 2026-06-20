@@ -29,8 +29,10 @@ venv/
 ENV/
 
 # Data and Models
-data/**/*.jsonl
-datasets/**/*.jsonl
+data/raw_issues_cache.json
+datasets/**/train.jsonl
+datasets/**/val.jsonl
+# Gold test sets are versioned
 !datasets/**/gold_test.jsonl
 experiments/**/*.bin
 experiments/**/*.pt
